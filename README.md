@@ -115,4 +115,34 @@ docker stop my-redis
 docker start my-redis
 docker rm my-redis 
 docker rmi redis
-
+6. dockerfile
+o	Create a folder like C:\DockerProjects\Redis.
+o	Open Git Bash and navigate to the folder:
+cd /c/DockerProjects/Redis
+1.	Inside the folder, create a file named Dockerfile (no extension).
+2.	Add the following content:
+FROM redis:latest CMD ["redis-server"]
+1.	docker build -t redisnew
+   2.docker run --name myredisnew -d redisnew
+3. docker ps
+   4. docker stop myredisnew
+   5. 5.	docker login
+      6.	6.	docker ps -a
+         7.	7.	docker commit 0e993d2009a1 budarajumadhurika/redis1
+            8.	8.	docker images
+               9.	9.	docker push budarajumadhurika/redis1
+                  10.	10.	docker rm 0e993d2009a1 // container id of myredisnew
+                    	11.	docker rmi budarajumadhurika/redis1
+                     12.	12.	docker ps -a
+                         13.	13.	docker logout
+                            	14.	docker pull budarajumadhurika/redis1
+                             15.	15.	docker run --name myredis -d budarajumadhurika/redis1
+                                 16.	16.	docker exec -it myredis redis-cli
+                                    	17.	SET name "Abcdef"
+                                     18.	18.	GET name
+                                         19.	19.	exit
+                                            	20.	docker ps -a
+                                             21.	21.	docker stop myredis
+                                                 22.	22.	docker rm 50a6e4a9c326
+                                                    	23.	docker images
+                                                     24.	24.	docker rmi budarajumadhurika/redis1

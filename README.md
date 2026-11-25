@@ -102,3 +102,17 @@ node {
 
     echo 'BUILD SUCCESSFUL!'
 }
+
+5.cli
+docker pull redis
+docker run --name my-redis -d redis
+docker ps
+docker exec -it my-redis redis-cli
+SET name "Alice" 
+GET name
+exit
+docker stop my-redis
+docker start my-redis
+docker rm my-redis 
+docker rmi redis
+
